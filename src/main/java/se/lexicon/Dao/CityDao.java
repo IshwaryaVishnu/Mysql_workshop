@@ -4,7 +4,7 @@ import se.lexicon.model.City;
 import java.util.List;
 
 public interface CityDao {
-    City findById(int id);
+    City findById(Integer id);
     List<City> findByCode(String code);
     List<City> findByName(String name);
     List<City> findAll();
