@@ -143,7 +143,7 @@ public class CityDaoJDBC implements  CityDao {
 
     @Override
     public City add(City city) {
-
+        city = new City();
         String sql = "insert into city (id, name, countryCode, district, population) values(?, ?, ?, ?, ?, ?)";
 
         try (
@@ -157,6 +157,8 @@ public class CityDaoJDBC implements  CityDao {
             preparedStatement.setDouble(5, city.getPopulation());
 
             ResultSet rs = preparedStatement.executeQuery();
+
+
 
         } catch (SQLException | DBConnectionException e) {
             throw new RuntimeException(e);
@@ -192,7 +194,7 @@ public class CityDaoJDBC implements  CityDao {
 
     @Override
     public int delete(City city) {
-
+        city = new City();
         String sql = "Delete into city (id, name, countryCode, district, population) values(?, ?, ?, ?, ?, ?)";
 
 
@@ -215,6 +217,6 @@ public class CityDaoJDBC implements  CityDao {
             throw new RuntimeException(e);
         }
 
-        return city.getId();
+        return 0;
     }
 }
