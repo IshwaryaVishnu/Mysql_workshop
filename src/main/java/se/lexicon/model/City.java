@@ -6,20 +6,7 @@ public class City {
     private String name;
     private String countryCode;
     private String district;
-
     private double population;
-    private Person person;
-
-    public City(String name, String countryCode, Person person) {
-        this.name = name;
-        this.countryCode = countryCode;
-        this.person = person;
-    }
-
-    public City(String name, String district) {
-        this.name = name;
-        this.district = district;
-    }
 
     public City(Integer id, String name, String district,String countryCode,double population) {
         this.id = id;
@@ -71,15 +58,7 @@ public class City {
         this.population = population;
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
-    @Override
+       @Override
     public String toString() {
         return "City{" +
                 "id=" + id +
@@ -87,7 +66,6 @@ public class City {
                 ", countryCode='" + countryCode + '\'' +
                 ", district='" + district + '\'' +
                 ", population=" + population +
-                ", person=" + person +
                 '}';
     }
 }
