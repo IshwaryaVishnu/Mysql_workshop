@@ -21,12 +21,14 @@ public class City {
         this.district = district;
     }
 
-    public City(Integer id, String name, String district,String countryCode,double population, Person person) {
+    public City(Integer id, String name, String district,String countryCode,double population) {
         this.id = id;
         this.district = district;
         this.countryCode = countryCode;
         this.population = population;
-        this.person = person;
+    }
+
+    public City() {
     }
 
     public Integer getId() {
