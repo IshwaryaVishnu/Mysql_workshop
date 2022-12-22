@@ -156,7 +156,7 @@ public class CityDaoJDBC implements  CityDao {
             preparedStatement.setString(4, city.getCountryCode());
             preparedStatement.setDouble(5, city.getPopulation());
 
-            ResultSet rs = preparedStatement.executeQuery();
+            int rs = preparedStatement.executeUpdate();
 
 
 
@@ -169,6 +169,7 @@ public class CityDaoJDBC implements  CityDao {
 
     @Override
     public City update(City city) {
+        city = new City();
         String sql = "Update into city (id, name, countryCode, district, population) values(?, ?, ?, ?, ?, ?)";
 
         try (
@@ -181,7 +182,7 @@ public class CityDaoJDBC implements  CityDao {
             preparedStatement.setString(4, city.getCountryCode());
             preparedStatement.setDouble(5, city.getPopulation());
 
-            ResultSet rs = preparedStatement.executeQuery();
+            int rs = preparedStatement.executeUpdate();
 
 
         } catch (SQLException | DBConnectionException e) {
